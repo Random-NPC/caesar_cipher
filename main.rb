@@ -8,6 +8,8 @@ def caesar_cipher(sentence, pos_moved)
       num = num
     end
   end
-p alpha
+  alpha.map! {|num| num > 90 && num < 97 || num > 122 ? num - 26 : num = num}
+  alpha.map! {|num| num.chr}
+p alpha.join('')
 end
 caesar_cipher('What a string!', 5)
